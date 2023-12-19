@@ -3,29 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game</title>
+    <title>Rock Paper Scissor | Soumava Das</title>
     <link rel="stylesheet" href="styles.css">
     
 </head>
 <body>
-    <div class="scoreboard">
-        <div class="scoreboardLeft">
-            <span>ROCK</span>
-            <span>PAPER</span>
-            <span>SCISSOR</span>
-        </div>
-        <div class="scoreboardRight">
-            <div class="Scores">
-                <span class="ScoresText">COMPUTER</span>
-                <span class="ScoresText">SCORE</span>
-                <span id="compScore" class="scoreDigit">0</span>
+    <div class="main-screen">
+        <header>
+            <div class="scoreBoard">
+                <h1>Rock <br> Paper <br> Scissor</h1>
+                <div class="display-score">
+                    <div class="scoreCount">
+                        Computer <br> Score
+                        <div class="scoreComp">0</div>
+                    </div>
+                    <div class="scoreCount">
+                        Your <br>
+                        Score
+                        <div class="scorePlayer">0</div>
+                    </div>
+                </div>
             </div>
-            <div class="Scores">
-                <span class="ScoresText">YOUR</span>
-                <span class="ScoresText">SCORE</span>
-                <span id="userScore" class="scoreDigit">0</span>
+        </header>
+        <main>
+            <!--Playing Zone-->
+        <div class="playing-zone">
+            <div class="playing-zone__top">
+                <div class="item" id="rock">
+                    <img src="./Assests/rock.png" alt="rock image" width="50%" height="35%">
+                </div>
+                <div class="item" id="scissor">
+                    <img src="./Assests/scissor.png" alt="scissor image">
+                </div>
+                <img src="./assets/Line 1.png" id="line1" />
+                <img src="./assets/Line 2.png" id="line2" />
+                <img src="./assets/Line 3.png" id="line3" />
+            </div>
+            <div class="playing-zone__bottom item" id="paper">
+                <img src="./Assests/paper.png" alt="paper image" width="40%" height="40%">
             </div>
         </div>
+
+        <!-- Result Zone -->
+        <div class="result-zone">
+            <div class="side">
+                <div class="side-text">YOU PICKED</div>
+                <div class="user-side-icon">
+                    <div class="side-icon" id="user-scissor">
+                        <img src="./Assests/scissor.png" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        </main>
     </div>
     <script src="script.js"></script>
 </body>
