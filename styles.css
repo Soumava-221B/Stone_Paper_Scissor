@@ -1,65 +1,42 @@
-* {
-    margin: 0px;
-    padding: 0px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
-body {
-    background: #89C15E;
+:root{
+    --dark-green: #004429;
+    --gray: #656565;
+    --yellow: #FFD600;
+    --black: #252525;
+    --green: #8CC461;
+    --white: #FFF;
+    --inner-green: #1da82b;
+    --mid-green: #1da82b90;
+    --outer-green: #2E9A2563;
 }
 
-.scoreboard {
+.main-screen {
+    width: 100vw;
+    height: 100vh;
+    background: var(--green);
+    color: var(--white);
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    left: 20rem;
-    top: 3rem;
-    height: 9rem;
-    width: 50rem;
-    border-radius: 0.65rem;
-    border: 2px solid white
 }
 
-.scoreboardLeft {
-    position: relative;
+/* Scoreboard */
+header{
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    font-size: 2rem;
-    line-height: 2.5rem;
-    padding: 0.7rem 0rem 0.7rem 0.7rem;
-    color: #ffffff;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 600;
-    letter-spacing: 1.7px;
+    width: full;
+    margin-top: 4%;
 }
 
-.scoreboardRight {
-    display: flex;
-}
-
-.Scores {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #ffffff;
-    margin-top: 0.5rem;
-    border-radius: 0.5rem;
-    width: 8rem;
-    height: 7.5rem;
-    margin: 0.65rem 1.5rem 0.65rem 0.3rem;
-}
-
-.ScoresText {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 600;
-    color: #656565;
-    line-height: 1rem;
-    letter-spacing: 1px;
-    margin-top: 0.25rem;
-}
-
-.scoreDigit {
-    font-size: 4.25rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 700;
+.scoreBoard{
+    width: 55;
 }
