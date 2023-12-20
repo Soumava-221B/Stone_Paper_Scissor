@@ -105,6 +105,11 @@ main{
     z-index: 2;
 }
 
+.playing-zone__bottom {
+    position: relative;
+    height: 40%;
+}
+
 #line1, #line2, #line3 {
     position: absolute;
     z-index: -1;
@@ -127,11 +132,6 @@ main{
     left: 34%;
     top: 35%;
     width: 13%;
-}
-
-.playing-zone__bottom {
-    position: relative;
-    height: 40%;
 }
 
 .item, .side-icon {
@@ -210,7 +210,7 @@ main{
     color: var(--gray);
     font-size: 0.8rem;
     letter-spacing: 1.5px;
-    width: 70px;
+    width: 70%;
     cursor: pointer;
 }
 
@@ -255,6 +255,8 @@ main{
     border-radius: 50%;
 }
 
+
+/* Rules Styling */
 .cross {
     background-image: url("./Assests/redbg.png");
     background-repeat: no-repeat;
@@ -371,4 +373,30 @@ main{
     width: 12rem;
     margin-top: 1rem;
     cursor: pointer;
+}
+
+/* Button Styling */
+
+footer{
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+}
+
+footer > button {
+    border: 2px solid var(--white);
+    background: transparent;
+    width: 7rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.nextBtn {
+    display: none;
 }
