@@ -61,3 +61,116 @@ const getRandomNumber = () => {
     return randomNumber;
 };
 
+// Game login for the winner
+const playRockPaperScissor = (userChoice, compChoice) => {
+    if (userChoice === compChoice) {
+        return "tie";
+    } else if (
+        (userChoice === 1 && compChoice === 3) ||
+        (userChoice === 2 && compChoice === 1) ||
+        (userChoice === 3 && compChoice === 2)
+    ) {
+        return "user";
+    } else {
+        return "comp";
+    }
+};
+
+const updateScore = (result) => {
+    // Retrieve the current scores form local storage
+    const scoresJSON = localStorage.getItem("scores");
+    const scores = scoresJSON ? JSON.parse(scoresJSON) : { user: 0, computer: 0 };
+
+    // Update the scores based on the result
+    if (result === "user") {
+        scores.user += 1;
+    } else if (result === "comp") {
+        scores.computer += 1;
+    }
+
+    // Save the updated scores back to local storage
+    localStorage.setItem("scores", JSON.stringify(scores));
+
+    updateScoreDisplay();
+};
+
+const updateResultSides = (userChoice, compChoice) => {
+    // setting user icon
+    if (userChoice === 1) {
+        userRock.style.display = "flex";
+        userPaper.style.display = "none";
+        userScissor.style.display = "none";
+    } else if (userChoice === 2) {
+        userRock.style.display = "none";
+        userPaper.style.display = "flex";
+        userScissor.style.display = "none";
+    } else if (userChoice === 3) {
+        userRock.style.display = "none";
+        userPaper.style.display = "none";
+        userScissor.style.display = "flex";
+    }
+
+    // setting pc icon
+    if (compChoice === 1) {
+        pcRock.style.display = "flex";
+        pcPaper.style.display = "none";
+        pcScissor.style.display = "none";
+    } else if (compChoice === 2) {
+        pcRock.style.display = "none";
+        pcPaper.style.display = "flex";
+        pcScissor.style.display = "none";
+    } else if (compChoice === 3) {
+        pcRock.style.display = "none";
+        pcPaper.style.display = "none";
+        pcScissor.style.display = "flex";
+    }
+};
+
+const updateResultZone = (result, userChoice, compChoice) => {
+    // making playing screen invisible and result screen visible
+    playingZone.style.display = "none";
+    resutlZone.style.display = "flex";
+
+    if (result === "tie") {
+        winText.style.display = "none";
+        lostText.style.display = "none";
+        subText.style.display = "none";
+        playAgainBtn.style.display = "none";
+        nextBtn.style.display = "none";
+
+        tieText.style.display = "block";
+        replayBtn.style.display = "block";
+
+        updateResultSides(userChoice, compChoice);
+        userIcon.classList.remove("green-background");
+        pcIcon.classList.remove("green-background");
+    } else if (result === "user") {
+        lostText.style.display = "none";
+        tieText.style.display = "none";
+        replayBtn.style.display = "none";
+
+        winText.style.display = "block";
+        subText.style.display = "block";
+        playAgainBtn.style.display = "block";
+        nextBtn.style.disply = "inline";
+
+        updateResultSides(userChoice, compChoice);
+
+        userIcon.classList.add("green-background");
+        pcIcon.classList.remove("green-background");
+    } else if (result === "comp") {
+        winText.style.display = "none";
+        tieText.style.display = "none";
+        replayBtn.style.display = "none";
+        nextBtn.style.display = "none";
+
+        lostText.style.display = "block";
+        subText.style.display = "block";
+        playAgainBtn.style.display = "block";
+
+        updateResultSides(userChoice, compChoice);
+
+        userIcon.classList.remove("green-background");
+        pcIcon.classList.add("green-background");
+    }
+};
