@@ -1,1 +1,1 @@
-# Stone_Paper_Scissor_Major_Module_Test
+# Stone_Paper_Scissor
